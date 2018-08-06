@@ -8,6 +8,7 @@ passenger,unicorn, puma
 ### Difference between Application server and Web Server 
 http://rorguide.blogspot.com/2011/07/difference-between-application-server.html
 apache, nginx, IIS are web servers
+
 mongrel, webrick, phusion passenger are app servers
 
 <b>App server</b> is something which works with particular programming language and parses and executes the code
