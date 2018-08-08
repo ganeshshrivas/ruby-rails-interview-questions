@@ -23,7 +23,15 @@ About Mongrel server:
 mongrel work as web as well as app server if you are talking about dev environment
 but in production, mongrel alone can not work it will be too slow
 so we need a web server in front of mongrel
-### How we enter 5000 entry in Rails in very less time
+### How we enter 5000 entry in Rails in very less time or Speeding Up Bulk Imports in Rails
+https://blog.codeship.com/speeding-up-bulk-imports-in-rails/
+```
+Product.transaction do
+    products = CSV.read("#{Rails.root}/tmp/products.csv")
+    columns = [:sku, :name, :origin, :msrp_cents]
+    Product.import columns, products, validate: false
+  end
+```
 ### find(:all) in rails 4 and 5 alternate
 find_by is not deprecated, but the syntax is changing a bit. From find_by_name("Bob") to find_by(:name, "Bob")
 Now take a look at find_by implementation:
