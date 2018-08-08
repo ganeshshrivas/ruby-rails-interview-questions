@@ -79,6 +79,7 @@ ___
 
 * Difference between 'union' and 'union_all'. (http://java67.blogspot.in/2014/09/difference-between-union-vs-union-all-in-SQL.html)
 * Inner join and left outer join
+![alt text](https://i.stack.imgur.com/hMKKt.jpg)
 * Primary key and unique key
 * Write query for: 
 **Table Name** - `Employee`
