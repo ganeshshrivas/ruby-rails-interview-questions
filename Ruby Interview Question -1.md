@@ -206,6 +206,7 @@ lambdas check the number of arguments passed, while procs do not
 return in a proc means to return from the proc and the enclosing method; return in a lambda means to return from just the lambda
 procs can only use return when the proc is defined inside a method and the proc is called before the method call returns
 http://rubyblog.pro/2016/11/lambda-and-proc-difference
+
 1. Lambda strictly checks params number, Proc doesn't
 ```
 l = ->(a, b) { puts "#{a} and #{b}" }
@@ -228,6 +229,7 @@ p = proc { |word = "default"| puts word }
 p.call # => default
 ```
 If we defined default values for arguments, we can call lambda as a Proc and don't pass any values at all. In this case default values will be used.
+
 2. return from lambda just returns value. Explicit return from Proc returns value from current scope (for example method) in which it was defined.
 We discussed such example with lambda:
 ```
@@ -264,6 +266,8 @@ puts foo # => Return from foo
 In this case after p.call call, method continued to execute and returned last string from foo method.
 
 ### What is decoraters?
+In object-oriented programming, the decorator pattern is a design pattern that allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class.
+
 https://codebrahma.com/ruby-decorators/
 ```
 class Car
