@@ -362,8 +362,11 @@ This will produce the following result −
 
 ``
 You are in the method
+
 You are in the block
+
 You are again back to the method
+
 You are in the block ``
 
 Blocks and Methods
@@ -385,10 +388,15 @@ In Rails a named scope is essentially a lambda if I'm not mistaken.
 You can use them to make case statements which evaluate expressions:
 `
 case { animal: "frog" }
+
 when ->(val) { val[:animal] == "dog" }
+
   puts "bark"
+  
 when ->(val) { val[:animal] == "frog" }
+
   puts "croak"
+  
 end`
 
 Kind of a pointless example here but I think it's a potentially useful thing.
