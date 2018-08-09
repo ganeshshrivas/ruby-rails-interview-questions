@@ -340,10 +340,15 @@ That’s it, our shiny new power packed cars are ready to be driven
 ### What is block?
 https://www.tutorialspoint.com/ruby/ruby_blocks.htm
 A block consists of chunks of code.
+
 You assign a name to a block.
+
 The code in the block is always enclosed within braces ({}).
+
 A block is always invoked from a function with the same name as that of the block. This means that if you have a block with the name test, then you use the function test to invoke this block.
+
 You invoke a block by using the yield statement.
+
 ```
 def test
    puts "You are in the method"
@@ -354,20 +359,24 @@ end
 test {puts "You are in the block"}
 ```
 This will produce the following result −
+
 ``
 You are in the method
 You are in the block
 You are again back to the method
 You are in the block ``
+
 Blocks and Methods
+
 `
 def test(&block)
    block.call
 end
 test { puts "Hello World!"}
+`
 
 This will produce the following result −
-
+`
 Hello World!
 `
 ### When to use lambda?
