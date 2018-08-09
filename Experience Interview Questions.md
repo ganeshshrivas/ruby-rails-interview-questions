@@ -73,3 +73,7 @@ Model.where
 2- If found: It returns ActiveRecord::Relation containing one or more records matching the parameters.
 
 3- If not found: It return an Empty ActiveRecord::Relation.
+
+### what is serializer in rails
+Active Model Serializers which be used to generate a JSON API in Rails.
+http://railscasts.com/episodes/409-active-model-serializers
