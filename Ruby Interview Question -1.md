@@ -408,7 +408,47 @@ Kind of a pointless example here but I think it's a potentially useful thing.
 Metaprogramming is the writing of computer programs with the ability to treat programs as their data. It means that a program could be designed to read, generate, analyze, or transform other programs and even modify itself while running.
 
 We’ll specifically look at how we can read and analyze our code in Ruby, how we can call methods (or send messages) dynamically, and how we can generate new methods during the runtime of our program.
+```
+define_method("#{feature}_info=") do |info|
+      instance_variable_set("@#{feature}_info", info)
+end
+```
+or
+```
+class Array
+  def foldl(method)
+    inject {|result, i| result ? result.send(method, i) : i }
+  end
+end
+puts [1000.0, 200.0, 50.0].foldl("/") # Feel free to experiment with this
 
+foo = "bar"
+foo.instance_eval do
+  def hi
+    "you smell"
+  end
+end
+
+foo.hi # => "you smell"
+
+bar = "foo"
+bar.class.class_eval do
+  def hello
+    "i can smell you from here"
+  end
+end
+
+bar.hello # => "i can smell you from here"
+
+class Klass
+	def hello(*args)
+	"Hello " + args.join(' ')
+	end
+end
+k = Klass.new
+k.send :hello, "gentle", "readers"   #=> "Hello gentle readers"
+```
+https://www.sitepoint.com/ruby-metaprogramming-part-i/
 http://rubylearning.com/blog/2010/11/23/dont-know-metaprogramming-in-ruby/
 
 ### What is a decorator?
