@@ -77,3 +77,9 @@ Model.where
 ### what is serializer in rails
 Active Model Serializers which be used to generate a JSON API in Rails.
 http://railscasts.com/episodes/409-active-model-serializers
+### Difference between Active Model, Active Record and Active Resource
+ActiveModel: This component was created in Rails 3. They took all the model related parts that did not have a database requirement of Rails 2 ActiveRecord and moved it into ActiveModel. So ActiveModel includes things like validations. More information: http://www.rubyinside.com/rails-3-0s-activemodel-how-to-give-ruby-classes-some-activerecord-magic-2937.html
+
+ActiveRecord: This is the component that associates a class to the database. This will give the class functionality such as methods that make it easy to pull records from the database (An example is the find method).
+
+ActiveResource: Similar to ActiveRecord. However, instead of being backed by a database, an ActiveResource object is backed by another application through a web service API. More information: http://ofps.oreilly.com/titles/9780596521424/activeresource_id59243.html
