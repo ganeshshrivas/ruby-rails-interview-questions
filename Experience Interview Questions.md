@@ -83,3 +83,25 @@ ActiveModel: This component was created in Rails 3. They took all the model rela
 ActiveRecord: This is the component that associates a class to the database. This will give the class functionality such as methods that make it easy to pull records from the database (An example is the find method).
 
 ActiveResource: Similar to ActiveRecord. However, instead of being backed by a database, an ActiveResource object is backed by another application through a web service API. More information: http://ofps.oreilly.com/titles/9780596521424/activeresource_id59243.html
+### What is the Asset Pipeline?
+https://guides.rubyonrails.org/asset_pipeline.html
+The asset pipeline provides a framework to concatenate and minify or compress JavaScript and CSS assets. It also adds the ability to write these assets in other languages and pre-processors such as CoffeeScript, Sass and ERB. It allows assets in your application to be automatically combined with assets from other gems.
+<b>1.1 Main Features</b>
+
+The first feature of the pipeline is to concatenate assets, which can reduce the number of requests that a browser makes to render a web page. Web browsers are limited in the number of requests that they can make in parallel, so fewer requests can mean faster loading for your application.
+
+Sprockets concatenates all JavaScript files into one master .js file and all CSS files into one master .css file. As you'll learn later in this guide, you can customize this strategy to group files any way you like. In production, Rails inserts an <b>SHA256 fingerprint</b> into each filename so that the file is cached by the web browser. You can invalidate the cache by altering this fingerprint, which happens automatically whenever you change the file contents.
+
+The second feature of the asset pipeline is asset minification or compression. For CSS files, this is done by removing whitespace and comments. For JavaScript, more complex processes can be applied. You can choose from a set of built in options or specify your own.
+
+The third feature of the asset pipeline is it allows coding assets via a higher-level language, with precompilation down to the actual assets. Supported languages include Sass for CSS, CoffeeScript for JavaScript, and ERB for both by default.
+<b>1.2 What is Fingerprinting and Why Should I Care?</b>
+
+Fingerprinting is a technique that makes the name of a file dependent on the contents of the file. When the file contents change, the filename is also changed. For content that is static or infrequently changed, this provides an easy way to tell whether two versions of a file are identical, even across different servers or deployment dates.
+
+When a filename is unique and based on its content, HTTP headers can be set to encourage caches everywhere (whether at CDNs, at ISPs, in networking equipment, or in web browsers) to keep their own copy of the content. When the content is updated, the fingerprint will change. This will cause the remote clients to request a new copy of the content. This is generally known as cache busting.
+
+The technique Sprockets uses for fingerprinting is to insert a hash of the content into the name, usually at the end. For example a CSS file global.css
+```
+global-908e25f4bf641868d8683022a5b62f54.css
+```
