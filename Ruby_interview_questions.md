@@ -122,6 +122,17 @@ ___
 
 * Difference between 'find' and 'closest'
 * bind Vs live
+* How to get length of string in javascript without using native length method
+```
+function strLength(s) {
+  var length = 0;
+  while (s[length] !== undefined)
+    length++;
+  return length;
+}
+
+console.log(strLength("Hello")); // 5
+```
 ___
 # HR
 * What is determination
