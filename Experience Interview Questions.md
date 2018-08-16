@@ -122,4 +122,38 @@ active record connects classes to relational database tables (migrations, associ
 
 active support contains all Ruby extensions ([].blank?)
 
+### What is the order of ActiveRecord callbacks and validations?
+Rails 4
+
+The most up-to-date version of this list can be found in the Rails 4 Guides.
+Creating an object
+
+    before_validation
+    after_validation
+    before_save
+    around_save
+    before_create
+    around_create
+    after_create
+    after_save
+    after_commit/after_rollback
+
+Updating an object
+
+    before_validation
+    after_validation
+    before_save
+    around_save
+    before_update
+    around_update
+    after_update
+    after_save
+    after_commit/after_rollback
+
+Destroying an object
+
+    before_destroy
+    around_destroy
+    after_destroy
+    after_commit/after_rollback
 
