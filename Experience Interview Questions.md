@@ -109,10 +109,17 @@ global-908e25f4bf641868d8683022a5b62f54.css
 Rails components are modules which are included by default in application.rb with require rails/all:
 
 action mailer is a module for designing email service layers
+
 action pack is a module for handling and responding to web requests (includes action_controller, action_dispatch)
+
 action view is a module for handling view template lookup and rendering
+
 active job is a module for declaring jobs and making them run on a variety of queueing backends
+
 active model is non-database functionality extracted from Rails 2 Active Record (validates :name, presence: true)
+
 active record connects classes to relational database tables (migrations, associations)
+
 active support contains all Ruby extensions ([].blank?)
+
 
