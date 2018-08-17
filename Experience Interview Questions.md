@@ -196,3 +196,48 @@ select distinct city from station where city LIKE 'A%' or city LIKE 'E%' OR city
 SELECT DISTINCT city
 FROM   station
 WHERE  city RLIKE '^[aeiouAEIOU].*[aeiouAEIOU]$'
+
+## PUT vs PATCH
+NOTE: When I first spent time reading about REST, idempotence was a confusing concept to try to get right. I still didn't get it quite right in my original answer, as further comments (and Jason Hoetger's answer) have shown. For a while, I have resisted updating this answer extensively, to avoid effectively plagiarizing Jason, but I'm editing it now because, well, I was asked to (in the comments).
+
+After reading my answer, I suggest you also read Jason Hoetger's excellent answer to this question, and I will try to make my answer better without simply stealing from Jason.
+Why is PUT idempotent?
+
+As you noted in your RFC 2616 citation, PUT is considered idempotent. When you PUT a resource, these two assumptions are in play:
+```
+    You are referring to an entity, not to a collection.
+
+    The entity you are supplying is complete (the entire entity).
+```
+Let's look at one of your examples.
+```
+{ "username": "skwee357", "email": "skwee357@domain.com" }
+```
+If you POST this document to /users, as you suggest, then you might get back an entity such as
+```
+## /users/1
+
+{
+    "username": "skwee357",
+    "email": "skwee357@domain.com"
+}
+```
+If you want to modify this entity later, you choose between PUT and PATCH. A PUT might look like this:
+```
+PUT /users/1
+{
+    "username": "skwee357",
+    "email": "skwee357@gmail.com"       // new email address
+}
+```
+You can accomplish the same using PATCH. That might look like this:
+```
+PATCH /users/1
+{
+    "email": "skwee357@gmail.com"       // new email address
+}
+```
+You'll notice a difference right away between these two. The PUT included all of the parameters on this user, but PATCH only included the one that was being modified (email).
+
+When using PUT, it is assumed that you are sending the complete entity, and that complete entity replaces any existing entity at that URI. In the above example, the PUT and PATCH accomplish the same goal: they both change this user's email address. But PUT handles it by replacing the entire entity, while PATCH only updates the fields that were supplied, leaving the others alone.
+https://stackoverflow.com/questions/28459418/rest-api-put-vs-patch-with-real-life-examples
