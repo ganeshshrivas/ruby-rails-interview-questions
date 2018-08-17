@@ -188,3 +188,11 @@ Database design is simpler in MySQL as compare to PostgreSQL.
 
 ## ORDBMS
 An object-relational database (ORD), or object-relational database management system (ORDBMS), is a database management system (DBMS) similar to a relational database, but with an object-oriented database model: objects, classes and inheritance are directly supported in database schemas and in the query language.
+
+### SQL query to check if a name begins with a vowel
+select distinct city from station where city LIKE 'A%' or city LIKE 'E%' OR city LIKE 'I%' OR city LIKE 'O%' OR city LIKE 'U%' OR city LIKE 'a%' OR city LIKE 'e%' OR city LIKE 'i%' OR city LIKE 'o%' OR city LIKE 'u%';
+
+### SQL query to check if a name begins and ends with a vowel
+SELECT DISTINCT city
+FROM   station
+WHERE  city RLIKE '^[aeiouAEIOU].*[aeiouAEIOU]$'
