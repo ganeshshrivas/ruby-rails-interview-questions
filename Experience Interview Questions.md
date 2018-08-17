@@ -161,15 +161,28 @@ Destroying an object
 https://www.differencebtw.com/difference-between-mysql-and-postgresql/
 
 MySQL is a relational database management system RDBMS while PostgreSQL is an object relational database management system (ORDBMS).
+
 MySQL is developed by Oracle and PostgreSQL is developed by the PostgreSQL Global Development Group.
+
 MySQL uses MySQL partitioning technology for storing data on different nodes of database while PostgreSQL does not implement true partitioning.
+
 Partitioning is done in MySQL for performing horizontal clustering while in PostgreSQL similar capability is done by table inheritance.
+
 Performance of MySQL is faster as compare to PostgreSQL.
+
 Sub-selects are available with PostgreSQL but not in MySQL.
+
 Foreign key support is available in PostgreSQL but not in MySQL.
+
 Triggers are available in PostgreSQL but not in MySQL.
+
 Unions are available in PostgreSQL but not in MySQL.
+
 Constraints are available in PostgreSQL but not in MySQL.
+
 Vacuum (cleanup) are available in PostgreSQL but not in MySQL.
+
 PostgreSQDL is closer to the ANSI SQL standard while MySQL is not fully compliant with ANSI SQL.
+
 Database design is simpler in MySQL as compare to PostgreSQL.
+
