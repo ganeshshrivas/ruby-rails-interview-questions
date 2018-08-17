@@ -186,3 +186,5 @@ PostgreSQDL is closer to the ANSI SQL standard while MySQL is not fully complian
 
 Database design is simpler in MySQL as compare to PostgreSQL.
 
+## ORDBMS
+An object-relational database (ORD), or object-relational database management system (ORDBMS), is a database management system (DBMS) similar to a relational database, but with an object-oriented database model: objects, classes and inheritance are directly supported in database schemas and in the query language.
