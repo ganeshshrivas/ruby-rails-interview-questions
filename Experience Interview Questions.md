@@ -242,7 +242,8 @@ You'll notice a difference right away between these two. The PUT included all of
 When using PUT, it is assumed that you are sending the complete entity, and that complete entity replaces any existing entity at that URI. In the above example, the PUT and PATCH accomplish the same goal: they both change this user's email address. But PUT handles it by replacing the entire entity, while PATCH only updates the fields that were supplied, leaving the others alone.
 https://stackoverflow.com/questions/28459418/rest-api-put-vs-patch-with-real-life-examples
 
-###Recovering stash entries that were cleared/dropped erroneously 
+### Recovering stash entries that were cleared/dropped erroneously 
+
 If you mistakenly drop or clear stash entries, they cannot be recovered through the normal safety mechanisms. However, you can try the following incantation to get a list of stash entries that are still in your repository, but not reachable any more:
 ```
 git fsck --unreachable |
