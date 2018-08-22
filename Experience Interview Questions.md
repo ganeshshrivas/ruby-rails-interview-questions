@@ -250,3 +250,13 @@ git fsck --unreachable |
     grep commit | cut -d\  -f3 |
     xargs git log --merges --no-walk --grep=WIP
 ```
+### html vs haml
+### sweeper
+### let vs var
+https://codeburst.io/difference-between-let-and-var-in-javascript-537410b2d707
+1) Thus let variables cannot be accessed in the window object because they cannot be globally accessed.
+2) let variables are usually used when there is a limited use of those variables. Say, in for loops, while loops or inside the scope of if conditions etc. Basically, where ever the scope of the variable has to be limited.
+3) let variables cannot be re-declared while var variable can be re-declared in the same scope.
+
+### NoSQl vs RDDBMS and apache vs nginx
+### passenger role
