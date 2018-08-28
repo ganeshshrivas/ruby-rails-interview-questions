@@ -260,3 +260,8 @@ https://codeburst.io/difference-between-let-and-var-in-javascript-537410b2d707
 
 ### NoSQl vs RDDBMS and apache vs nginx
 ### passenger role
+### require and load
+### through and catch
+### class & struct
+### garbage collection in ruby
+### different type of mechnism to store cookies in browser Or local storage in ruby
