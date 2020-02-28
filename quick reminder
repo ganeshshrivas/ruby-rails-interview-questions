@@ -5,3 +5,14 @@ https://blog.appsignal.com/2018/09/04/ruby-magic-closures-in-ruby-blocks-procs-a
 
 ===================Why are anonymous functions useful?==================================================
 Anonymous functions are often arguments being passed to higher-order functions, or used for constructing the result of a higher-order function that needs to return a function. If the function is only used once, or a limited number of times, an anonymous function may be syntactically lighter than using a named function.
+
+
+
+====================== Microservices ==================================================
+
+https://blog.lunarway.com/from-rails-monolith-to-microservices-part-1-1067d48f2d86
+
+
+
+============================== rails engine =======================
+https://www.quora.com/What-is-a-rails-engine
