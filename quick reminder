@@ -24,3 +24,9 @@ https://blog.bigbinary.com/2018/06/05/using-concurrent-ruby-in-a-ruby-on-rails-a
 
 ===================================== Caching ===============================
 https://www.sitepoint.com/speed-things-up-by-learning-about-caching-in-rails/
+
+
+OAuth2
+https://www.sitepoint.com/rails-authentication-oauth-2-0-omniauth/
+
+JWt {header, payload, signature}
