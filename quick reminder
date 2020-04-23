@@ -30,3 +30,8 @@ OAuth2
 https://www.sitepoint.com/rails-authentication-oauth-2-0-omniauth/
 
 JWt {header, payload, signature}
+
+
+
+Multiple database connection
+https://medium.com/@shilpikayal/dual-database-connection-in-rails-76ca42e276a7
