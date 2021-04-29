@@ -70,6 +70,7 @@ Server
 
 
 ===============Answers==========================
+hash.sort_by{|k, v| v}.to_h
 
 Can you explain how Ruby looks up a method to invoke?
 A
