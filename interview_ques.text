@@ -1,0 +1,110 @@
+Ruby
+================
+#  Is Ruby a statically typed or a dynamically typed language?
+# Is everything in Ruby an object?
+# ruby is pure object oriented explain? and what is object Hierarchy?
+# Can you explain how Ruby looks up a method to invoke?
+# what is module and what is diffrent between module and class
+# What are blocks and procs?
+# explain this code and what is output
+-> (s) {p s} [“I’m a Proc”]
+# Mention What Is The Difference Between A Gem And A Plugin In Ruby?
+# What Is The Use Of Load And Require In Ruby?
+# Explain The Difference Between Nil And False In Ruby?
+
+
+rails
+=========
+# Explain what is “Yield” in Ruby on Rails?
+# Explain what is ORM (Object-Relationship-Model) in Rails? who table associate with model?
+# Mention what is Rails Migration? and how can I check my all migration status
+# Explain when self.up and self.down method is used? vs change 
+# Mention what is the difference between String and Symbol?
+# Explain how Rails implements Ajax?
+#  Explain what is Cross-Site Request Forgery (CSRF) and how Rails is protected against it?
+# what is instance and class method and define self inside each method ?
+# Explain what is rake in Rails?
+# Explain what is the difference between Dynamic and Static Scaffolding?
+# Mention what is the difference between redirect and render in Ruby on Rails? and describe flow of render 
+# Explain what is Polymorphic Association in Ruby on Rails?
+# what is single inheritance 
+# what is engine in rails ?
+# module vs concern in rails
+# Mention what is the difference between calling super() and super call?
+# Mention what is the difference extend and include?
+# how to connect multiple database in rails and use diffent database in perticular model
+# optimization in rails eagar load and cache
+# how you can add your own method in inbuild Class like I want to add kumolus_data in Date class
+# what is middleware in rails
+
+program
+hash = {a: 9, b: 2, c: 4, d: 7, e: 5}
+i want keys according to values sort order 
+b,c,e,d,a
+
+Database
+========
+Emp table
+name code salary
+# insert multiple values in emp table
+# get 4th highest salary from emp
+# what is joins in sql 
+# group -> forums
+forums -> topics
+topics -> replies
+replies -> likes
+--- I want all groups -> forums -> topics -> replies likes count 
+
+Server
+========
+# application server and webserver
+# how nginx know which application i need to run
+# how I can block specific ip from nginx
+
+
+
+
+
+
+
+
+
+===============Answers==========================
+
+Can you explain how Ruby looks up a method to invoke?
+A
+Since Ruby is a pure object-oriented language, it’s important to make sure your developer thoroughly understands how objects work. The first place that Ruby looks for a method is in the object’s metaclass or eigenclass—the class that contains methods directly defined on the object. If the method cannot be found in an object’s metaclass, Ruby will then search for the method in the ancestors of an object’s class. The list of ancestors for any class starts with the class of the object itself, and climbs parent classes until it reaches the Object, Kernel, and BasicObject classes at the top of the Ruby class hierarchy. If Ruby cannot find the method, it will internally send another method aptly called “method_missing?” to the object class. Ruby will repeat another search for this method, and will at least find it in the object class, provided the programmer did not see fit to define the “method_missing?” class earlier in the ancestry of the object.
+
+
+B object hirarchy
+=> [Object, Kernel, BasicObject]
+
+second highest salary
+SELECT salary FROM employee ORDER BY salary desc limit 1,1
+
+
+class OldDatabase < ActiveRecord::Base
+  self.abstract_class = true
+  establish_connection(
+  :adapter  => 'mysql',
+  :database => 'weather',
+  :host     => 'localhost',
+  :username => 'root',
+  :password => 'password'
+  )
+end
+
+class NewDatabase < ActiveRecord::Base
+  self.abstract_class = true
+  establish_connection(
+  :adapter  => 'mysql',
+  :database => 'redmine',
+  :host     => 'localhost',
+  :username => 'root',
+  :password => 'password'
+  )
+end
+
+SELECT * FROM employees emp 
+LEFT JOIN departments dep 
+ON emp.department_id = dep.department_id;
